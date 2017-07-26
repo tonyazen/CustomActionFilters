@@ -1,23 +1,32 @@
-﻿using System.Web.Mvc;
+﻿using CustomActionFilters.Filters;
+using CustomActionFilters.Models;
+using System.Web.Mvc;
 
 namespace CustomActionFilters.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
-        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize(Roles ="admin")]
-        public ActionResult ManageUsers()
+        [CustomFilter]
+        public ActionResult Contact()
         {
-            return View();
+            var model = new ContactViewModel
+            {
+                Name = "Tonya Cooper",
+                Location = "Grand Rapids, MI",
+                TwitterHandle = "@tonyazen",
+                Email = "cooper.tonya@gmail.com",
+                ShowEmail = true
+            };
+
+            return View(model);
         }
 
-        [Authorize(Users ="tonyazen")]
+        [CustomFilter]
         public ActionResult About()
         {
             return View();
