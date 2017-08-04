@@ -1,20 +1,16 @@
 ﻿using CustomActionFilters.Models;
-using log4net;
 using System.Web.Mvc;
 
 namespace CustomActionFilters.Filters
 {
-    public class CustomFilter2 : ActionFilterAttribute
+    public class HideEmailFilter : ActionFilterAttribute
     {
-        private static readonly ILog _logger = LogManager.GetLogger(typeof(CustomFilter2));
-
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            _logger.Debug($"CustomFilter2: OnResultExecuting.");
-
             var model = (ContactViewModel)filterContext.Controller.ViewData.Model;
-            model.ShowEmail = true;
-        }
+            model.ShowEmail = false;
 
+            filterContext.Controller.ViewBag.Message += " This page has been filtered.";
+        }
     }
 }

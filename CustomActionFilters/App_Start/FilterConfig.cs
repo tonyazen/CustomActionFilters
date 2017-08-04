@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using CustomActionFilters.Filters;
 
 namespace CustomActionFilters
 {
@@ -7,6 +8,7 @@ namespace CustomActionFilters
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new RedirectToContactFilter());
             filters.Add(new HandleErrorAttribute());
         }
     }

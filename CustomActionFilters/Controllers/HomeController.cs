@@ -6,12 +6,13 @@ namespace CustomActionFilters.Controllers
 {
     public class HomeController : Controller
     {
+        [LoggingFilter]
         public ActionResult Index()
         {
             return View();
         }
 
-        [CustomFilter]
+        [HideEmailFilter]
         public ActionResult Contact()
         {
             var model = new ContactViewModel
@@ -26,7 +27,7 @@ namespace CustomActionFilters.Controllers
             return View(model);
         }
 
-        [CustomFilter]
+        [RedirectToContactFilter]
         public ActionResult About()
         {
             return View();
