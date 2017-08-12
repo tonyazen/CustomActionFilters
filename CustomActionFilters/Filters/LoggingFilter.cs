@@ -9,22 +9,22 @@ namespace CustomActionFilters.Filters
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            _logger.Debug("CustomFilter: OnActionExecuting.");
+            _logger.Debug("1.");
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            _logger.Debug("CustomFilter: OnActionExecuted.");
+            _logger.Debug("2.");
         }
 
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            _logger.Debug($"CustomFilter: OnResultExecuting.");
+            _logger.Debug("3.");
         }
 
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
-            _logger.Debug("CustomFilter: OnResultExecuted.");
+            _logger.Debug("4.");
         }
 
     }

@@ -151,7 +151,7 @@
     <Compile Include="Controllers\OutputCacheAttributeController.cs" />
     <Compile Include="Controllers\RequireHttpsAttributeController.cs" />
     <Compile Include="Controllers\ValidateInputAttributeController.cs" />
-    <Compile Include="Filters\HideEmailFilter.cs" />
+    <Compile Include="Filters\PrivateEmailFilter.cs" />
     <Compile Include="Filters\RedirectToContactFilter.cs" />
     <Compile Include="Filters\LoggingFilter.cs" />
     <Compile Include="Global.asax.cs">

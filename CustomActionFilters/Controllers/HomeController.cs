@@ -12,7 +12,6 @@ namespace CustomActionFilters.Controllers
             return View();
         }
 
-        [HideEmailFilter]
         public ActionResult Contact()
         {
             var model = new ContactViewModel
